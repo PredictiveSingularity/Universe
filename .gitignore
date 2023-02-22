@@ -1,0 +1,8 @@
+*.zip
+*.blend1
+*.egg
+__pycache__
+*.pyc
+.vscode/
+build/
+dist/
