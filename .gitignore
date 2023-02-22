@@ -1,7 +1,7 @@
 *.zip
 *.blend1
 *.egg
-*.egg.info/
+*.egg-info/
 __pycache__
 *.pyc
 .vscode/
