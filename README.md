@@ -131,7 +131,7 @@ if __name__ == '__main__':
         sys.exit(1)
 ```
 
-Quckly update any parameter and see the results.
+Quickly update any parameter and see the results.
 
 ```zsh
 ❯ make simulation
