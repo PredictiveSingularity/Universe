@@ -48,7 +48,7 @@ make windows
 
 # Installation
 
-Make sure you [build `simulate` first](#build-from-source)
+Make sure you [build `simulate` first](#build-from-source).
 
 ```zsh
 ❯ file dist/simulate
