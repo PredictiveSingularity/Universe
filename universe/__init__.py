@@ -9,10 +9,11 @@ __age_scale__ = BILLION # 1_000_000_000
 
 from ursina import *
 #from physics3d import *
-from physics3d import Debugger, BoxCollider, MeshCollider, SphereCollider
+# from physics3d import Debugger, BoxCollider, MeshCollider, SphereCollider
 #from panda3d.bullet import BulletWorld
 
 from universe.technologies import *
 from universe.structures import *
 #from universe.technologies.simulations.universe import Universe, CosmicBackgroundRadiation
 #from universe.structures.bodies.stars import Star, Sol
+from universe.main import Universe

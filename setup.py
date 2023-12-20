@@ -25,7 +25,7 @@ setup(
         # 'siunits~=0.0.6',
         'ursina~=5.2.0',
         # 'cython-setuptools~=0.2.3',
-        'physics3d==1.0',
+        # 'physics3d==1.0',
         # 'git+https://github.com/LooksForFuture/Bullet-for-ursina.git',
     ],
     # entry_points={

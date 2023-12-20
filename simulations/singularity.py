@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from universe import *
+from ursina import *
 
 import numpy as np
 

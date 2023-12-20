@@ -1,4 +1,4 @@
-.PHONY = build
+# .PHONY = build
 
 help:
 	@echo "Makefile Help"
@@ -13,7 +13,7 @@ simulation:
 run:
 	@python -m universe
 
-build:
+build: 
 	@echo "Building Universe..."
 	@python setup.py build
 	@cython -3 simulate.py -o build/simulate.c --embed
@@ -41,4 +41,11 @@ windows:
 release:
 	@make build
 	@python -m twine upload dist/*
-	@rm dist/*
+	
+
+clean:
+	@rm -rf build
+	@rmdir build
+	@rm -rf dist
+	@rmdir dist
+	@rm -rf *.egg-info

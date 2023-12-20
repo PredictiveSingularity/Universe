@@ -1,4 +1,4 @@
-# Universe
+sour# Universe
 Energy in All Space & Time is pulling together towards the Singularity.
 
 This Python tool is built on top of [Ursina Engine](https://www.ursinaengine.org/) using [Bullet for Ursina](https://github.com/LooksForFuture/Bullet-for-ursina) `physics3d` library. 
@@ -35,11 +35,10 @@ simulacre.run()
 
 ## Index
 
--   [Build from source](#build-from-source)
--   [Installation](#installation)
--   [Usage](#usage)
--   [Examples](#examples)
--   [Contributions](#contributions)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Examples](#examples)
+  - [Contributions](#contributions)
 
 ## Build from source
 Clone this repository.
@@ -48,11 +47,16 @@ Clone this repository.
 ```
 
 Build `simulate` binary.
+
+Make sure `Cython` is installed.
+
 ```zsh
 ❯ cd Universe/
+❯ pip install -r requirements.txt
 ❯ make build
 ❯ ls dist/
 ```
+
 After you have built `simulate`, you can [install it](#installation).
 
 Alternatively you could try to build for Windows using [Ursina's Build Engine](https://www.ursinaengine.org/building.html).

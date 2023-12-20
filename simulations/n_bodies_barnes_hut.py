@@ -1,5 +1,6 @@
 
 from universe import *
+from universe import Universe
 import numpy as np
 
 application.asset_folder = Path(application.asset_folder).parent

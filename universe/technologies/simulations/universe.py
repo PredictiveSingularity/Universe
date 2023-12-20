@@ -1,8 +1,10 @@
-from ursina import Ursina, Sky, color
+from ursina import Ursina, Sky #, color
 # from universe.structures.bodies.stars import Star
 
-class Universe(Ursina):
-    pass
+# class Universe(Ursina):
+#     pass
+
+Universe = Ursina
 
 class CosmicBackgroundRadiation(Sky):
     pass
