@@ -53,7 +53,6 @@ clean:
 	@rm -rf *.egg-info
 
 docs:
-	-@rm -rf docs
 	@echo "Generating docs..."
-	@bash ./fetch_docs.sh
+	@cd docs && bash ./fetch_docs.sh
 	@echo "Docs have been generated."
