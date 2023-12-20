@@ -1,6 +1,7 @@
 from ursina import Ursina, EditorCamera, time, window, application, held_keys
 
-from universe.technologies.simulations.universe import Universe
+from universe.technologies.simulations.universe import *
+# from universe.technologies.simulations.origin import *
 from universe.technologies.units.international_system import second, meter
 
 #from universe.structures.bodies.stars import Star

@@ -54,3 +54,7 @@ def kilo_gram(kg=1):
     unit = gram(1000)
     return unit * kg
 
+def solar_mass(M=1):
+    # M☉ = (1.98847±0.00007)×1030 kg
+    unit = kilo_gram(1.98847 * 1030)
+    return unit * M

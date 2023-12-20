@@ -6,17 +6,32 @@ This Python tool is built on top of [Ursina Engine](https://www.ursinaengine.org
 It provides an easy way to visualize the interaction of Energy trought Space and Time.
 
 ```python
-# import Everthing from the Universe
+# import Everything from the Universe
 from universe import *
 
 # Define the Universe
 simulacre = Universe()
 
-# Define Anything within the Universe here
+# Define Everything or Anything within the Universe here
+origin = Singularity()
 
 # Run the simulation
 simulacre.run()
 ```
+
+![Capture d’écran du 2023-02-22 01-25-43.png](assets/img/Capture%20d%E2%80%99%C3%A9cran%20du%202023-02-22%2001-25-43.png)
+
+Everything is Always too much. Let's tone it down.
+
+```python
+simulacre = Universe()
+
+cbr = CosmicBackgroundRadiation()
+
+simulacre.run()
+```
+
+![Capture d’écran du 2023-02-24 18-54-09.png](assets/img/Capture%20d%E2%80%99%C3%A9cran%20du%202023-02-24%2018-54-09.png)
 
 ## Index
 

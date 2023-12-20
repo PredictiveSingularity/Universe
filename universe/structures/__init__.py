@@ -78,3 +78,8 @@ class Structure(Entity):
         self.position += self.current_velocity * self.timestamp
 
 
+from universe.structures.particules import *
+from universe.structures.atoms import *
+from universe.structures.molecules import *
+from universe.structures.bodies import *
+

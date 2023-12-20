@@ -454,7 +454,6 @@ class Moon(CelestialBody):
     moon_brightness = 0 # Planets are black-bodies they dont emit light only reflect part of it (see scattering rays)
     moon_lifespan = year(7.5 * 1_000_000_000) # in 7.5 billion years earth is absorbed by the expansion of the dying Sun
 
-
     def __init__(
             self,
             name=luna_name,

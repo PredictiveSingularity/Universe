@@ -10,7 +10,8 @@ import sys
 from universe import *
 from ursina.shaders import lit_with_shadows_shader
 
-simulacre = None
+simulacre = cbr = None
+time_delta = 0
 
 def get_parsed_args():
     import argparse
@@ -45,10 +46,19 @@ def input(key):
         application.quit()
 
 def update():
-    global simulacre
-
-    # print(f"This is an update at. {time.dt}")
-    
+        global cbr, time_delta
+        
+        time_delta += time.dt
+        if cbr:
+            if time_delta < 1:
+                cbr.texture = None
+                cbr.color = Color(-1 * time_delta)
+            elif time_delta < 2:
+                cbr.texture = 'assets/texture/milky-way'
+                cbr.color = None
+            elif time_delta < 3:
+                cbr.texture = None
+                cbr.color = color.white
 
 #from universe.main import main
 def main():
@@ -77,40 +87,40 @@ def main():
 
     # Define the Universe here.
     
-    cbr = CosmicBackgroundRadiation(texture='assets/texture/milky-way', scale=1000)
-
+    cbr = CosmicBackgroundRadiation(scale=100)
+    
     # sol = Sol()
 
     # print(f"{sol.name} has a temperature of {sol.temperature} Kelvin")
     # print(f"{sol.mass()=}")
     # print(f"{sol.color=}")
     
-    sol = Entity(
-        model = 'sphere',
-        # color = color.yellow,
-        scale = 1.5,
-        texture='assets/texture/sol',
-        collider='sphere',
-        shader = lit_with_shadows_shader
-    )
-    sol.unlit = True
+    # sol = Entity(
+    #     model = 'sphere',
+    #     # color = color.yellow,
+    #     scale = 1.5,
+    #     texture='assets/texture/sol',
+    #     collider='sphere',
+    #     shader = lit_with_shadows_shader
+    # )
+    # sol.unlit = True
 
-    sol.light = PointLight(parent=sol, shadows=True, color=color.red, position=sol.position)
+    # sol.light = PointLight(parent=sol, shadows=True, color=color.red, position=sol.position)
 
-    earth = Entity(
-        parent = sol,
-        model = 'sphere',
-        # color = color.blue,
-        scale = 0.4,
-        texture='assets/texture/earth',
-        collider='sphere',
-        position=Vec3(40, 0, 0),
-        rotation_x=420,
-        rotation_z=180,
-        shader = lit_with_shadows_shader
-    )
+    # earth = Entity(
+    #     world_parent = sol,
+    #     model = 'sphere',
+    #     # color = color.blue,
+    #     scale = 0.4,
+    #     texture='assets/texture/earth',
+    #     collider='sphere',
+    #     position=Vec3(40, 0, 0),
+    #     rotation_x=420,
+    #     rotation_z=180,
+    #     shader = lit_with_shadows_shader
+    # )
 
-    observer = EditorCamera(parent=earth)
+    observer = EditorCamera()
 
     simulacre.run()
 
