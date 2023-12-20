@@ -1,4 +1,7 @@
-# .PHONY = build
+# Build, docs release, run, simulation, windows, install and clean can be used multiple times
+# How can I edit make file to run the command again? Answer: You need to use a 
+
+.PHONY: help simulation run build install windows release clean docs
 
 help:
 	@echo "Makefile Help"
@@ -13,7 +16,7 @@ simulation:
 run:
 	@python -m universe
 
-build: 
+build: setup.py
 	@echo "Building Universe..."
 	@python setup.py build
 	@cython -3 simulate.py -o build/simulate.c --embed
@@ -22,7 +25,7 @@ build:
 	@echo "Universe has been built."
 	@echo "Type make install to use."
 
-install:
+install: build
 	@echo "Installing Universe..."
 	@python setup.py install
 	@cp dist/simulate /usr/bin/simulate
@@ -41,7 +44,6 @@ windows:
 release:
 	@make build
 	@python -m twine upload dist/*
-	
 
 clean:
 	@rm -rf build
@@ -49,3 +51,9 @@ clean:
 	@rm -rf dist
 	@rmdir dist
 	@rm -rf *.egg-info
+
+docs:
+	-@rm -rf docs
+	@echo "Generating docs..."
+	@bash ./fetch_docs.sh
+	@echo "Docs have been generated."
